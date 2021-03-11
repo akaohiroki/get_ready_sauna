@@ -6,8 +6,11 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname, length: { maximum: 20 }
-    validates :age, format: { with: /\A[0-9]+\z/ }
-    validates :gender_id
-    validates :sauna_history_id
+    validates :age, numericality: { only_integer: true }
+    with_options numericality: { other_than: 1 } do
+      validates :gender_id
+      validates :sauna_history_id
+    end
   end
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
 end
