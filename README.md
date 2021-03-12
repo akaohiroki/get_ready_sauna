@@ -26,6 +26,7 @@
 | water_bath      | integer    | null: false       |
 | break_space     | integer    | null: false       |
 | prefecture      | integer    | null: false       |
+| budget          | integer    | null: false       |
 | number_of_visit | integer    | null: false       |
 | evaluation      | integer    | null: false       |
 | general_comment | integer    | null: false       |
