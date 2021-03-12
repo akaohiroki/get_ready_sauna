@@ -67,6 +67,7 @@
     <%= link_to '新規投稿記事', "#", class: "subtitle" %>
     <ul class='item-lists'>
 
+    <% @articles.each do |article| %>
       <li class='list'>
         <%= link_to "#" do %>
         <div class='item-img-content'>
@@ -87,6 +88,7 @@
         </div>
         <% end %>
       </li>
+    <% end %>
 
       <%# 投稿がない場合は以下のダミー投稿が表示されるようにしましょう %>
       <%# 投稿がある場合は表示されないようにしましょう %>
@@ -113,7 +115,7 @@
   </div>
   <%# /投稿一覧 %>
 </div>
-<%= link_to('#', class: 'purchase-btn') do %>
+<%= link_to(new_article_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>投稿する</span>
   <%= image_tag 'sauna_logo.jpg' , size: '185x50' ,class: "purchase-btn-icon" %>
 <% end %>
