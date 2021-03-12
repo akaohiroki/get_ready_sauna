@@ -15,4 +15,7 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
 
   has_many :articles
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :gender
+  belongs_to :sauna_history
 end
