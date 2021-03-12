@@ -1,24 +1,64 @@
-# README
+## users テーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column        | Type    | Options     |
+| ------------- | ------- | ----------- |
+| nickname      | string  | null: false |
+| email         | string  | null: false |
+| password      | string  | null: false |
+| age           | integer | null: false |
+| gender        | integer | null: false |
+| sauna_history | integer | null: false |
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+- has_many :articles
+- has_many :comments
+- has_many :sample_images
 
-* System dependencies
 
-* Configuration
+## articles テーブル
 
-* Database creation
+| Column          | Type       | Options           |
+| --------------- | ---------- | ----------------- |
+| bath_type       | integer    | null: false       |
+| temperature     | integer    | null: false       |
+| breadth         | integer    | null: false       |
+| water_bath      | integer    | null: false       |
+| break_space     | integer    | null: false       |
+| prefecture      | integer    | null: false       |
+| budget          | integer    | null: false       |
+| number_of_visit | integer    | null: false       |
+| evaluation      | integer    | null: false       |
+| general_comment | integer    | null: false       |
+| user            | references | foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many :comments
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## comments テーブル
 
-* ...
+| Column  | Type       | Options           |
+| ------- | ---------- | ----------------- |
+| user    | references | foreign_key: true |
+| article | references | foreign_key: true |
+| comment | text       | null: false       |
+
+### Association
+
+- 
+
+
+## sample_images テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     |                                |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
+
+### Association
+
+- 
