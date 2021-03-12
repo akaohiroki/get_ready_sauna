@@ -1,0 +1,120 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <div class='title-contents'>
+    <h1 class='service-title'>
+      Get Ready サウナ!!
+    </h1>
+    <p class='service-explain'>
+      おすすめのサウナを投稿しよう!!
+    </p>
+    <p class='service-explain'>
+      整えるサウナを見つけ出せ！
+    </p>
+  </div>
+
+  
+
+  <div class='ad-contents'>
+    <h2 class='ad-title'>
+      サウナのあとの至福の水風呂
+    </h2>
+    <p class='ad-explain'>
+      整える場所には至極の水風呂あり
+    </p>
+    <p class='ad-explain'>
+      サウナと水風呂は一心同体です
+    </p>
+  </div>
+
+  <div class='feature-contents'>
+    <h2 class='title'>
+      ♨️整う流れ♨️
+    </h2>
+    <ul class='feature-lists'>
+      <li class='list'>
+        <%= image_tag "sauna3.png", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          サウナに入る
+        </h3>
+        <p class='feature-list-description'>
+          6~12分程度入り、体全体を熱します。
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "mizuburo3.png", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          水風呂に浸かる
+        </h3>
+        <p class='feature-list-description'>
+          1~3分程度浸かり、熱せられた体を冷やします。
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "gaikiyoku.png", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          休憩し、整う
+        </h3>
+        <p class='feature-list-description'>
+          体の水分を拭き取ったあと、ベンチに座り整います。
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <div class='item-contents'>
+    <h2 class='title'>ピックアップサウナ</h2>
+    <%= link_to '新規投稿記事', "#", class: "subtitle" %>
+    <ul class='item-lists'>
+
+      <li class='list'>
+        <%= link_to "#" do %>
+        <div class='item-img-content'>
+          <%= image_tag "hokuou.jpg", class: "item-img" %>
+
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "サウナ&カプセルホテル 北欧" %>
+          </h3>
+          <div class='item-price'>
+            <span><%= "東京都" %><br><%= '¥2000~' %></span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>9</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+
+      <%# 投稿がない場合は以下のダミー投稿が表示されるようにしましょう %>
+      <%# 投稿がある場合は表示されないようにしましょう %>
+      <li class='list'>
+        <%= link_to '#' do %>
+        <%= image_tag "marusinspa.jpg", class: "item-img" %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            おすすめのサウナを投稿してね！
+          </h3>
+          <div class='item-price'>
+            <span>都道府県<br>予算</span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>1~10</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <%# //投稿がある場合は表示されないようにしましょう %>
+      <%# //投稿がない場合は以下のダミー投稿が表示されるようにしましょう %>
+    </ul>
+  </div>
+  <%# /投稿一覧 %>
+</div>
+<%= link_to('#', class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>投稿する</span>
+  <%= image_tag 'sauna_logo.jpg' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+<%= render "shared/footer" %>

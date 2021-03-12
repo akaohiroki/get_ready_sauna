@@ -9,7 +9,8 @@ a {
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  background-image: image-url('furima-header01.png');
+  height: 150vh;
+  background-image: image-url('sauna2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -18,17 +19,18 @@ a {
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 15vw;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  color: #000000;
+  font-weight: bolder;
+  text-shadow: 0 0 1.5px rgba(0, 0, 0, 0.9);
 }
 
 .service-title {
-  font-size: 8vh;
+  font-size: 15vh;
 }
 
 .service-explain {
-  font-size: 2.5vh;
-  line-height: 40px;
+  font-size: 5vh;
+  line-height: 60px;
 }
 
 .store-btn {
@@ -124,7 +126,8 @@ a {
 /* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
-  background-image: image-url('furima-header02.png');
+  height: 100vh;
+  background-image: image-url('mizuburo2.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -133,18 +136,18 @@ a {
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 15vw;
-  color: #fff;
+  color: #33CCFF;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
 .ad-title {
-  font-size: 5vh;
+  font-size: 7vh;
   margin-bottom: 2vh;
 }
 
 .ad-explain {
-  font-size: 2.5vh;
-  line-height: 30px;
+  font-size: 3vh;
+  line-height: 40px;
 }
 
 .store-btn {
