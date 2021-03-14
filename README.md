@@ -1,13 +1,13 @@
 ## users テーブル
 
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| nickname      | string  | null: false |
-| email         | string  | null: false |
-| password      | string  | null: false |
-| age           | integer | null: false |
-| gender        | integer | null: false |
-| sauna_history | integer | null: false |
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| nickname         | string  | null: false |
+| email            | string  | null: false |
+| password         | string  | null: false |
+| age              | integer | null: false |
+| gender_id        | integer | null: false |
+| sauna_history_id | integer | null: false |
 
 ### Association
 
@@ -18,19 +18,20 @@
 
 ## articles テーブル
 
-| Column          | Type       | Options           |
-| --------------- | ---------- | ----------------- |
-| bath_type       | integer    | null: false       |
-| temperature     | integer    | null: false       |
-| breadth         | integer    | null: false       |
-| water_bath      | integer    | null: false       |
-| break_space     | integer    | null: false       |
-| prefecture      | integer    | null: false       |
-| budget          | integer    | null: false       |
-| number_of_visit | integer    | null: false       |
-| evaluation      | integer    | null: false       |
-| general_comment | integer    | null: false       |
-| user            | references | foreign_key: true |
+| Column             | Type       | Options           |
+| ------------------ | ---------- | ----------------- |
+| name               | string     | null: false       |
+| prefecture_id      | integer    | null: false       |
+| bath_type_id       | integer    | null: false       |
+| temperature_id     | integer    | null: false       |
+| breadth_id         | integer    | null: false       |
+| water_bath_id      | integer    | null: false       |
+| break_space_id     | integer    | null: false       |
+| budget_id          | integer    | null: false       |
+| number_of_visit_id | integer    | null: false       |
+| evaluation_id      | integer    | null: false       |
+| general_comment    | text       | null: false       |
+| user               | references | foreign_key: true |
 
 ### Association
 
