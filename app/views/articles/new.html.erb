@@ -42,12 +42,12 @@
       <div class="weight-bold-text">サウナの詳細</div>
       <div class="form">
         <div class="weight-bold-text">
-          お風呂の種類
+          風呂の種類
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:bath_type_id, BathType.all, :id, :name, {}, {class:"select-box", id:"article-gender-bath"}) %>
         <div class="weight-bold-text">
-          サウナの熱さ
+          サウナの温度
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:temperature_id, Temperature.all, :id, :name, {}, {class:"select-box", id:"article-heat"}) %>
@@ -62,7 +62,7 @@
         </div>
         <%= f.collection_select(:water_bath_id, WaterBath.all, :id, :name, {}, {class:"select-box", id:"article-water-temperature"}) %>
         <div class="weight-bold-text">
-          休憩所
+          休憩スペース
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:break_space_id, BreakSpace.all, :id, :name, {}, {class:"select-box", id:"article-lounge"}) %>
