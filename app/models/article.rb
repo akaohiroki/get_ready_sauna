@@ -14,13 +14,13 @@ class Article < ApplicationRecord
     end
     validates :general_comment, length: { maximum: 1000 }
   end
-  
+
   belongs_to :user
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
   belongs_to :bath_type
-  belongs_to :temprerature
+  belongs_to :temperature
   belongs_to :breadth
   belongs_to :water_bath
   belongs_to :break_space
