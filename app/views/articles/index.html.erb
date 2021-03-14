@@ -71,18 +71,22 @@
       <li class='list'>
         <%= link_to "#" do %>
         <div class='item-img-content'>
-          <%= image_tag "hokuou.jpg", class: "item-img" %>
+        <% if article.image.attached? %>
+          <%= image_tag article.image, class: "item-img" %>
+        <% else %>
+          <%= image_tag "unnamed.png", class: "item-img" %>
+        <% end %>
 
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= "サウナ&カプセルホテル 北欧" %>
+            <%= article.name %>
           </h3>
           <div class='item-price'>
-            <span><%= "東京都" %><br><%= '¥2000~' %></span>
+            <span><%= article.prefecture.name %><br><%= article.budget.name %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>9</span>
+              <span class='star-count'><%= article.evaluation.name %></span>
             </div>
           </div>
         </div>
@@ -90,27 +94,25 @@
       </li>
     <% end %>
 
-      <%# 投稿がない場合は以下のダミー投稿が表示されるようにしましょう %>
-      <%# 投稿がある場合は表示されないようにしましょう %>
-      <li class='list'>
-        <%= link_to '#' do %>
-        <%= image_tag "marusinspa.jpg", class: "item-img" %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            おすすめのサウナを投稿してね！
-          </h3>
-          <div class='item-price'>
-            <span>都道府県<br>予算</span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>1~10</span>
+      <% if @articles.length == 0 %>
+        <li class='list'>
+          <%= link_to '#' do %>
+          <%= image_tag "marusinspa.jpg", class: "item-img" %>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              おすすめのサウナを投稿してね！
+            </h3>
+            <div class='item-price'>
+              <span>都道府県<br>予算</span>
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'>評価</span>
+              </div>
             </div>
           </div>
-        </div>
-        <% end %>
-      </li>
-      <%# //投稿がある場合は表示されないようにしましょう %>
-      <%# //投稿がない場合は以下のダミー投稿が表示されるようにしましょう %>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
   <%# /投稿一覧 %>
