@@ -42,6 +42,16 @@ RSpec.describe User, type: :model do
         @user.age = 28
         expect(@user).to be_valid
       end
+
+      it 'self_introductionが空でも登録できる' do
+        @user.self_introduction = ''
+        expect(@user).to be_valid
+      end
+
+      it 'self_introductionが1000字以内であれば投稿できる' do
+        @user.self_introduction = 'サ' * 1000
+        expect(@user).to be_valid
+      end
     end
 
     context '新規登録できないとき' do
@@ -145,6 +155,12 @@ RSpec.describe User, type: :model do
         @user.sauna_history_id = 1
         @user.valid?
         expect(@user.errors.full_messages).to include("Sauna history must be other than 1")
+      end
+
+      it 'self_introductionが1001文字以上では登録できない' do
+        @user.self_introduction = 'サ' * 1001
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Self introduction is too long (maximum is 1000 characters)")
       end
     end
   end

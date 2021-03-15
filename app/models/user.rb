@@ -12,6 +12,7 @@ class User < ApplicationRecord
       validates :sauna_history_id
     end
   end
+  validates :self_introduction, length: { maximum: 1000 }
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
 
   has_many :articles
