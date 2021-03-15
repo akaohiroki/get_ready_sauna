@@ -11,6 +11,11 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
 
+      it 'imageが空でも登録できる' do
+        @user.image = nil
+        expect(@user).to be_valid
+      end
+
       it 'nicknameが20文字以内であれば登録できる' do
         @user.nickname = 'a' * 20
         expect(@user).to be_valid
