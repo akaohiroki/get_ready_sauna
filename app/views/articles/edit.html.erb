@@ -3,145 +3,103 @@ app/assets/stylesheets/items/new.css %>
 
 <div class="items-sell-contents">
   <header class="items-sell-header">
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+    <%= link_to image_tag('sauna.png' , size: '185x100'), "/" %>
   </header>
   <div class="items-sell-main">
-    <h2 class="items-sell-title">商品の情報を入力</h2>
-    <%= form_with local: true do |f| %>
+    <h2 class="items-sell-title">サウナの情報を入力</h2>
+    <%= form_with(model: @article, local: true) do |f| %>
 
-    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: f.object %>
-    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+    <%= render 'shared/error_messages', model: f.object %>
 
-    <%# 出品画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
-        出品画像
-        <span class="indispensable">必須</span>
+        サウナ画像
+        <span class="indispensable">任意</span>
       </div>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :hoge, id:"item-image" %>
+        <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
-    <%# /出品画像 %>
-    <%# 商品名と商品説明 %>
+
     <div class="new-items">
       <div class="weight-bold-text">
-        商品名
+        サウナ名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :hoge, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"サウナの名称（40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
-          商品の説明
+          所在地
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :hoge, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"article-prefecture"}) %>
       </div>
     </div>
-    <%# /商品名と商品説明 %>
 
-    <%# 商品の詳細 %>
+    <%# サウナの詳細 %>
     <div class="items-detail">
-      <div class="weight-bold-text">商品の詳細</div>
+      <div class="weight-bold-text">サウナの詳細</div>
       <div class="form">
         <div class="weight-bold-text">
-          カテゴリー
+          風呂の種類
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:bath_type_id, BathType.all, :id, :name, {}, {class:"select-box", id:"article-gender-bath"}) %>
         <div class="weight-bold-text">
-          商品の状態
+          サウナの温度
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-sales-status"}) %>
+        <%= f.collection_select(:temperature_id, Temperature.all, :id, :name, {}, {class:"select-box", id:"article-heat"}) %>
+        <div class="weight-bold-text">
+          サウナの広さ
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:breadth_id, Breadth.all, :id, :name, {}, {class:"select-box", id:"article-breadth"}) %>
+        <div class="weight-bold-text">
+          水風呂の温度
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:water_bath_id, WaterBath.all, :id, :name, {}, {class:"select-box", id:"article-water-temperature"}) %>
+        <div class="weight-bold-text">
+          休憩スペース
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:break_space_id, BreakSpace.all, :id, :name, {}, {class:"select-box", id:"article-lounge"}) %>
+        <div class="weight-bold-text">
+          予算
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:budget_id, Budget.all, :id, :name, {}, {class:"select-box", id:"article-budget"}) %>
+        <div class="weight-bold-text">
+          来店回数
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:number_of_visit_id, NumberOfVisit.all, :id, :name, {}, {class:"select-box", id:"article-visit"}) %>
+        <div class="weight-bold-text">
+          総合評価
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"select-box", id:"article-evaluation"}) %>
       </div>
     </div>
-    <%# /商品の詳細 %>
 
-    <%# 配送について %>
-    <div class="items-detail">
-      <div class="weight-bold-text question-text">
-        <span>配送について</span>
-        <a class="question" href="#">?</a>
-      </div>
-      <div class="form">
+    <div class="new-items">
+      <div class="items-explain">
         <div class="weight-bold-text">
-          配送料の負担
+          サウナの総評
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
-        <div class="weight-bold-text">
-          発送元の地域
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-prefecture"}) %>
-        <div class="weight-bold-text">
-          発送までの日数
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <%= f.text_area :general_comment, class:"items-text", id:"article-impressions", placeholder:"全体的な感想（1,000文字まで入力可）（温度、規模、雰囲気など何でも記入OK!!）例）サウナの温度、湿度が絶妙で居心地が最高によかったです。時計が故障中だったので時間を計れなかったことが少し残念でした。" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /配送について %>
 
-    <%# 販売価格 %>
-    <div class="sell-price">
-      <div class="weight-bold-text question-text">
-        <span>販売価格<br>(¥300〜9,999,999)</span>
-        <a class="question" href="#">?</a>
-      </div>
-      <div>
-        <div class="price-content">
-          <div class="price-text">
-            <span>価格</span>
-            <span class="indispensable">必須</span>
-          </div>
-          <span class="sell-yen">¥</span>
-          <%= f.text_field :hoge, class:"price-input", id:"item-price", placeholder:"例）300" %>
-        </div>
-        <div class="price-content">
-          <span>販売手数料 (10%)</span>
-          <span>
-            <span id='add-tax-price'></span>円
-          </span>
-        </div>
-        <div class="price-content">
-          <span>販売利益</span>
-          <span>
-            <span id='profit'></span>円
-          </span>
-        </div>
-      </div>
-    </div>
-    <%# /販売価格 %>
-
-    <%# 注意書き %>
-    <div class="caution">
-      <p class="sentence">
-        <a href="#">禁止されている出品、</a>
-        <a href="#">行為</a>
-        を必ずご確認ください。
-      </p>
-      <p class="sentence">
-        またブランド品でシリアルナンバー等がある場合はご記載ください。
-        <a href="#">偽ブランドの販売</a>
-        は犯罪であり処罰される可能性があります。
-      </p>
-      <p class="sentence">
-        また、出品をもちまして
-        <a href="#">加盟店規約</a>
-        に同意したことになります。
-      </p>
-    </div>
-    <%# /注意書き %>
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "変更する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', "#", class:"back-btn" %>
+      <%=link_to 'もどる', article_path(@article.id), class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
@@ -149,13 +107,13 @@ app/assets/stylesheets/items/new.css %>
 
   <footer class="items-sell-footer">
     <ul class="menu">
-      <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">フリマ利用規約</a></li>
-      <li><a href="#">特定商取引に関する表記</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
     </ul>
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+    <%= link_to image_tag('sauna.png' , size: '185x100'), "/" %>
     <p class="inc">
-      ©︎Furima,Inc.
+      ©︎GetReadyサウナ!!,Inc.
     </p>
   </footer>
 </div>
