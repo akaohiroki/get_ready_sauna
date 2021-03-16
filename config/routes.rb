@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "articles#index"
-  resources :articles
+  resources :articles do
+    resources :comments, only: :create
+  end
   resources :users, only: :show
 end
