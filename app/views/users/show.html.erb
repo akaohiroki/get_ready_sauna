@@ -1,0 +1,89 @@
+<%= render "shared/header" %>
+
+<%# 投稿の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <div class="item-img-content">
+      <% if @user.image.attached? %>
+          <%= image_tag @user.image, class: "item-img" %>
+        <% else %>
+          <%= image_tag "profile_icon.png", class: "item-img" %>
+        <% end %>
+    </div>
+    <div class="item-price-box">
+      <span class="item-price">
+        <%= @user.nickname %>
+      </span>
+    </div>
+
+    <div class="item-explain-box">
+      <span><%= @user.self_introduction %></span>
+    </div>
+
+    <% if user_signed_in? %>
+      <% if current_user.id == @user.id %>
+        <%= link_to "編集", "#", method: :get, class: "item-red-btn" %>
+      <% end %>
+    <% end %>
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">サウナ歴</th>
+          <td class="detail-value"><%= @user.sauna_history.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">性別</th>
+          <td class="detail-value"><%= @user.gender.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">年齢</th>
+          <td class="detail-value"><%= @user.age %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul class='item-lists'>
+    <% @user.articles.each do |article| %>
+      <li class='list'>
+        <%= link_to article_path(article.id) do %>
+        <div class='item-img-content'>
+        <% if article.image.attached? %>
+          <%= image_tag article.image, class: "item-img" %>
+        <% else %>
+          <%= image_tag "unnamed.png", class: "item-img" %>
+        <% end %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= article.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= article.prefecture.name %><br><%= article.budget.name %></span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'><%= article.evaluation.name %></span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
+
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>お気に入り 0</span>
+      </div>
+      <div class="report-btn">
+        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+        <span>不適切な投稿の通報</span>
+      </div>
+    </div>
+  </div>
+  <%# /投稿の概要 %>
+
+</div>
+
+<%= render "shared/footer" %>

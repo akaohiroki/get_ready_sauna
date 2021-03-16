@@ -1,13 +1,14 @@
 ## users テーブル
 
-| Column           | Type    | Options     |
-| ---------------- | ------- | ----------- |
-| nickname         | string  | null: false |
-| email            | string  | null: false |
-| password         | string  | null: false |
-| age              | integer | null: false |
-| gender_id        | integer | null: false |
-| sauna_history_id | integer | null: false |
+| Column            | Type    | Options     |
+| ----------------- | ------- | ----------- |
+| nickname          | string  | null: false |
+| email             | string  | null: false |
+| password          | string  | null: false |
+| age               | integer | null: false |
+| gender_id         | integer | null: false |
+| sauna_history_id  | integer | null: false |
+| self_introduction | text    |             |
 
 ### Association
 
