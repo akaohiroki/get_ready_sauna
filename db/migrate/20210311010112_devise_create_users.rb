@@ -10,6 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.integer :age,                   null: false
       t.integer :gender_id,             null: false
       t.integer :sauna_history_id,      null: false
+      t.text    :self_introduction
 
       ## Recoverable
       t.string   :reset_password_token

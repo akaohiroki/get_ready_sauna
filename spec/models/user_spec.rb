@@ -11,6 +11,11 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
 
+      it 'imageが空でも登録できる' do
+        @user.image = nil
+        expect(@user).to be_valid
+      end
+
       it 'nicknameが20文字以内であれば登録できる' do
         @user.nickname = 'a' * 20
         expect(@user).to be_valid
@@ -35,6 +40,16 @@ RSpec.describe User, type: :model do
 
       it 'ageが半角数字であれば登録できる' do
         @user.age = 28
+        expect(@user).to be_valid
+      end
+
+      it 'self_introductionが空でも登録できる' do
+        @user.self_introduction = ''
+        expect(@user).to be_valid
+      end
+
+      it 'self_introductionが1000字以内であれば投稿できる' do
+        @user.self_introduction = 'サ' * 1000
         expect(@user).to be_valid
       end
     end
@@ -140,6 +155,12 @@ RSpec.describe User, type: :model do
         @user.sauna_history_id = 1
         @user.valid?
         expect(@user.errors.full_messages).to include("Sauna history must be other than 1")
+      end
+
+      it 'self_introductionが1001文字以上では登録できない' do
+        @user.self_introduction = 'サ' * 1001
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Self introduction is too long (maximum is 1000 characters)")
       end
     end
   end
