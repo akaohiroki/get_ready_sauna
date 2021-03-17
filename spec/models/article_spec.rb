@@ -31,79 +31,79 @@ RSpec.describe Article, type: :model do
       it 'nameが空では投稿できない' do
         @article.name = ''
         @article.valid?
-        expect(@article.errors.full_messages).to include("Name can't be blank")
+        expect(@article.errors.full_messages).to include("サウナ名を入力してください")
       end
 
       it 'nameが41文字以上では投稿できない' do
         @article.name = 'サ' * 41
         @article.valid?
-        expect(@article.errors.full_messages).to include("Name is too long (maximum is 40 characters)")
+        expect(@article.errors.full_messages).to include("サウナ名は40文字以内で入力してください")
       end
 
       it 'prefecture_idが空では投稿できない' do
         @article.prefecture_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include("Prefecture must be other than 1")
+        expect(@article.errors.full_messages).to include("所在地は1以外の値にしてください")
       end
 
       it 'bath_type_idが空では投稿できない' do
         @article.bath_type_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include("Bath type must be other than 1")
+        expect(@article.errors.full_messages).to include("風呂の種類は1以外の値にしてください")
       end
 
       it 'temperature_idが空では投稿できない' do
         @article.temperature_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include("Temperature must be other than 1")
+        expect(@article.errors.full_messages).to include("サウナの温度は1以外の値にしてください")
       end
 
       it 'breadth_idが空では投稿できない' do
         @article.breadth_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include("Breadth must be other than 1")
+        expect(@article.errors.full_messages).to include("サウナの広さは1以外の値にしてください")
       end
 
       it 'water_bath_idが空では投稿できない' do
         @article.water_bath_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include("Water bath must be other than 1")
+        expect(@article.errors.full_messages).to include("水風呂の温度は1以外の値にしてください")
       end
 
       it 'break_space_idが空では投稿できない' do
         @article.break_space_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include("Break space must be other than 1")
+        expect(@article.errors.full_messages).to include("休憩スペースは1以外の値にしてください")
       end
 
       it 'budget_idが空では投稿できない' do
         @article.budget_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include("Budget must be other than 1")
+        expect(@article.errors.full_messages).to include("予算は1以外の値にしてください")
       end
 
       it 'number_of_visit_idが空では投稿できない' do
         @article.number_of_visit_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include("Number of visit must be other than 1")
+        expect(@article.errors.full_messages).to include("来店回数は1以外の値にしてください")
       end
 
       it 'evaluation_idが空では投稿できない' do
         @article.evaluation_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include("Evaluation must be other than 1")
+        expect(@article.errors.full_messages).to include("総合評価は1以外の値にしてください")
       end
 
       it 'general_commentが空では投稿できない' do
         @article.general_comment = ''
         @article.valid?
-        expect(@article.errors.full_messages).to include("General comment can't be blank")
+        expect(@article.errors.full_messages).to include("サウナの総評を入力してください")
       end
 
       it 'general_commentが1001文字以上では投稿できない' do
         @article.general_comment = 'サ' * 1001
         @article.valid?
-        expect(@article.errors.full_messages).to include("General comment is too long (maximum is 1000 characters)")
+        expect(@article.errors.full_messages).to include("サウナの総評は1000文字以内で入力してください")
       end
     end
   end
