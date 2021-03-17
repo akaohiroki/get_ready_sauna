@@ -1,12 +1,12 @@
 class Temperature < ActiveHash::Base
   self.data = [
-    { id: 1, name: '--' },
-    { id: 2, name: '低い' },
-    { id: 3, name: 'やや低め' },
-    { id: 4, name: '普通' },
-    { id: 5, name: 'やや高め' },
-    { id: 6, name: '高い' },
-    { id: 7, name: '灼熱' }
+    { id: 1, name: '1.--' },
+    { id: 2, name: '2.低い' },
+    { id: 3, name: '3.やや低め' },
+    { id: 4, name: '4.普通' },
+    { id: 5, name: '5.やや高め' },
+    { id: 6, name: '6.高い' },
+    { id: 7, name: '7.灼熱' }
   ]
 
   include ActiveHash::Associations

@@ -1,0 +1,21 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+       age: 年齢
+       gender_id: 性別
+       sauna_history_id: サウナ歴
+       self_introduction: 自己紹介
+     article:
+       name: サウナ名
+       prefecture_id: 所在地
+       bath_type_id: 風呂の種類
+       temperature_id: サウナの温度
+       breadth_id: サウナの広さ
+       water_bath_id: 水風呂の温度
+       break_space_id: 休憩スペース
+       budget_id: 予算
+       number_of_visit_id: 来店回数
+       evaluation_id: 総合評価
+       general_comment: サウナの総評
