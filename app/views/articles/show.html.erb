@@ -24,7 +24,7 @@
 
     <% if user_signed_in? %>
       <% if current_user.id == @article.user_id %>
-        <%= link_to "投稿記事の編集", edit_article_path, method: :get, class: "item-red-btn" %>
+        <%= link_to "投稿記事の編集", edit_article_path(@article.id), method: :get, class: "item-red-btn" %>
         <p class="or-text">or</p>
         <%= link_to "投稿記事の削除", "#", method: :delete, class:"item-destroy" %>
       <% end %>
@@ -84,25 +84,44 @@
   <%# /商品の概要 %>
 
   <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
+    <% if user_signed_in? %>
+      <%= form_with(model: [@article, @comment], local: true) do |f| %>
+        <%= f.text_area :text, class: "comment-text" %>
+        <p class="comment-warn">
+          相手のことを考え丁寧なコメントを心がけましょう。
+          <br>
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        </p>
+        <button type="submit" class="comment-btn">
+          <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+          <span>コメントする<span>
+        </button>
+      <% end %>
+    <% end %>
   </div>
+    
+  <div class="change-item-btn">
+    💬コメント一覧💬
+  </div>
+    <ul class="comments_lists">
+      <% @comments.each do |comment| %>
+        <li class="comments_list">
+            <p>
+              <%= link_to "#{comment.user.nickname} :", user_path(comment.user_id), class: "comment-flag-icon" %>
+              <%= comment.text %>
+              <% if current_user == comment.user %>
+                <%= link_to "削除", article_comment_path(@article, comment), method: :delete %>
+              <% end %>
+            </p>
+        </li>
+      <% end %>
+    </ul>
   <div class="links">
     <a href="#" class="change-item-btn">
-      ＜ 前の投稿
+      ＜ 前の投稿📝
     </a>
     <a href="#" class="change-item-btn">
-      後ろの投稿 ＞
+      📝後ろの投稿 ＞
     </a>
   </div>
   <%= link_to "#{@article.user.nickname}さんの投稿をもっと見る", user_path(@article.user_id), method: :get, class: "another-item" %>

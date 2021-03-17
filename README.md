@@ -50,7 +50,8 @@
 
 ### Association
 
-- 
+- belongs_to :user
+- belongs_to :article
 
 
 ## sample_images テーブル
@@ -63,4 +64,5 @@
 
 ### Association
 
-- 
+- belongs_to :user
+- belongs_to :article

@@ -29,6 +29,7 @@ class User < ApplicationRecord
   end
 
   has_many :articles
+  has_many :comments, dependent: :destroy
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender
