@@ -9,8 +9,8 @@ a {
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  height: 150vh;
-  background-image: image-url('sauna2.jpg');
+  height: 100vh;
+  background-image: image-url('sauna1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -19,7 +19,7 @@ a {
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 15vw;
-  color: #000000;
+  color: #FFFFFF;
   font-weight: bolder;
   text-shadow: 0 0 1.5px rgba(0, 0, 0, 0.9);
 }
@@ -30,7 +30,7 @@ a {
 
 .service-explain {
   font-size: 5vh;
-  line-height: 60px;
+  line-height: 70px;
 }
 
 .store-btn {
@@ -126,7 +126,7 @@ a {
 /* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   background-image: image-url('mizuburo2.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -137,17 +137,18 @@ a {
   justify-content: center;
   padding: 5vh 15vw;
   color: #33CCFF;
+  font-weight: bolder;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
 .ad-title {
-  font-size: 7vh;
+  font-size: 8vh;
   margin-bottom: 2vh;
 }
 
 .ad-explain {
-  font-size: 3vh;
-  line-height: 40px;
+  font-size: 4vh;
+  line-height: 50px;
 }
 
 .store-btn {

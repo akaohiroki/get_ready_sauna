@@ -11,8 +11,8 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'サウナとは', "#", class: "category-list" %></li>
-      <li><%= link_to 'サウナ画像', "#", class: "brand-list" %></li>
+      <li><%= link_to 'サウナとは', page_path('about'), class: "category-list" %></li>
+      <li><%= link_to 'サウナ画像', page_path('image'), class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>

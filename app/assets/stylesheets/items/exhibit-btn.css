@@ -1,7 +1,7 @@
 .purchase-btn {
-  width: 140px;
-  height: 130px;
-  background: #FF4F02;
+  width: 150px;
+  height: 140px;
+  background: #00ECFF;
   text-align: center;
   border-radius: 4%;
   bottom: 32px;
@@ -11,7 +11,7 @@
 }
 
 .purchase-btn-text {
-  color: #fff;
+  color: #000000;
   display: block;
   font-size: 18px;
   text-decoration: none;
