@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:create, :destroy]
     collection do
-      post 'search'
+      get 'search'
     end
   end
   resources :users, only: [:show, :edit, :update]
