@@ -1,0 +1,29 @@
+<%= render "shared/header" %>
+
+<ul class='item-lists'>
+  <% @articles.each do |article| %>
+    <li class='list'>
+      <%= link_to article_path(article.id) do %>
+      <div class='item-img-content'>
+      <% if article.image.attached? %>
+        <%= image_tag article.image, class: "item-img" %>
+      <% else %>
+        <%= image_tag "unnamed.png", class: "item-img" %>
+      <% end %>
+      </div>
+      <div class='item-info'>
+        <h3 class='item-name'>
+          <%= article.name %>
+        </h3>
+        <div class='item-price'>
+          <span><%= article.prefecture.name %><br><%= article.budget.name %></span>
+          <div class='star-btn'>
+            <%= image_tag "star.png", class:"star-icon" %>
+            <span class='star-count'><%= article.evaluation.name %></span>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

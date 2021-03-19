@@ -28,4 +28,12 @@ class Article < ApplicationRecord
   belongs_to :budget
   belongs_to :number_of_visit
   belongs_to :evaluation
+
+  def self.search(search)
+    if search != ""
+      Article.where('name LIKE(?)', "%#{search}%")
+    else
+      Article.all
+    end
+  end
 end
