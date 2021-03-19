@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root to: "articles#index"
   resources :articles do
     resources :comments, only: [:create, :destroy]
+    collection do
+      post 'search'
+    end
   end
-  resources :users, only: :show
+  resources :users, only: [:show, :edit, :update]
 end
