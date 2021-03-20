@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_021456) do
     t.integer "number_of_visit_id", null: false
     t.integer "evaluation_id", null: false
     t.text "general_comment", null: false
+    t.integer "likes_count"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
