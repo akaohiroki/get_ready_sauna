@@ -1,20 +1,20 @@
 ## users テーブル
 
-| Column            | Type    | Options     |
-| ----------------- | ------- | ----------- |
-| nickname          | string  | null: false |
-| email             | string  | null: false |
-| password          | string  | null: false |
-| age               | integer | null: false |
-| gender_id         | integer | null: false |
-| sauna_history_id  | integer | null: false |
-| self_introduction | text    |             |
+| Column             | Type    | Options     |
+| ------------------ | ------- | ----------- |
+| nickname           | string  | null: false |
+| email              | string  | null: false |
+| encrypted_password | string  | null: false |
+| age                | integer | null: false |
+| gender_id          | integer | null: false |
+| sauna_history_id   | integer | null: false |
+| self_introduction  | text    |             |
 
 ### Association
 
 - has_many :articles
 - has_many :comments
-- has_many :sample_images
+- has_many :likes
 
 
 ## articles テーブル
@@ -32,21 +32,24 @@
 | number_of_visit_id | integer    | null: false       |
 | evaluation_id      | integer    | null: false       |
 | general_comment    | text       | null: false       |
+| likes_count        | integer    |                   |
 | user               | references | foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - has_many :comments
+- has_many :likes
+
 
 
 ## comments テーブル
 
 | Column  | Type       | Options           |
 | ------- | ---------- | ----------------- |
+| text    | text       | null: false       |
 | user    | references | foreign_key: true |
 | article | references | foreign_key: true |
-| comment | text       | null: false       |
 
 ### Association
 
@@ -54,13 +57,12 @@
 - belongs_to :article
 
 
-## sample_images テーブル
+## likes テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| content | string     |                                |
-| user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
+| Column  | Type       | Options           |
+| ------- | ---------- | ----------------- |
+| user    | references | foreign_key: true |
+| article | references | foreign_key: true |
 
 ### Association
 
