@@ -2,11 +2,12 @@ class LikesController < ApplicationController
   before_action :set_variables, only: [:create, :destroy]
 
   def create
-    @like = current_user.likes.create(article_id: params[:article_id])
+    like = current_user.likes.new(article_id: @article.id)
+    like.save
   end
 
   def destroy
-    like = current_user.likes.find_by(article_id: params[:article_id])
+    like = current_user.likes.find_by(article_id: @article.id)
     like.destroy
   end
 
