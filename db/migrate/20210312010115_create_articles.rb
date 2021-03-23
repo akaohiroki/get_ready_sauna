@@ -12,6 +12,7 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.integer    :number_of_visit_id, null: false
       t.integer    :evaluation_id,      null: false
       t.text       :general_comment,    null: false
+      t.integer    :likes_count
       t.references :user,               foreign_key: true
       t.timestamps
     end

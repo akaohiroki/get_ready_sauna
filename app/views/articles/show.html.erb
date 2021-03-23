@@ -70,18 +70,11 @@
     <div class="item-explain-box">
       <span><%= @article.general_comment %></span>
     </div>
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な投稿の通報</span>
-      </div>
-    </div>
   </div>
-  <%# /商品の概要 %>
+
+  <div class="like-link" id="like-link-<%= @article.id %>">
+    <%= render partial: 'likes/like', locals: { article: @article } %>
+  </div>
 
   <div class="comment-box">
     <% if user_signed_in? %>
