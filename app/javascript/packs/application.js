@@ -4,13 +4,11 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-//= require jquery3
-//= require rails-ujs
-//= require_tree .
 // require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('../preview')
+require('jquery')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
