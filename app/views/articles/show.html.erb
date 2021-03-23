@@ -70,10 +70,11 @@
     <div class="item-explain-box">
       <span><%= @article.general_comment %></span>
     </div>
+  </div>
 
-  <%= render partial: 'articles/articles', locals: { article: @article } %>
-    
-  <%# /商品の概要 %>
+  <div class="like-link" id="like-link-<%= @article.id %>">
+    <%= render partial: 'likes/like', locals: { article: @article } %>
+  </div>
 
   <div class="comment-box">
     <% if user_signed_in? %>
