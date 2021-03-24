@@ -1,13 +1,21 @@
 .purchase-btn {
-  width: 150px;
-  height: 140px;
+  width: 140px;
+  height: 120px;
   background: #00ECFF;
   text-align: center;
-  border-radius: 4%;
+  border-radius: 10%;
   bottom: 32px;
   right: 32px;
   position: fixed;
   padding: 15px;
+  overflow: visible;
+  display: block;
+  transition-duration: 0.5s;
+}
+
+.purchase-btn :hover {
+  transform: scale(1.2,1.2);
+  transition-duration: 0.5s;
 }
 
 .purchase-btn-text {
@@ -19,5 +27,5 @@
 }
 
 .purchase-btn-icon {
-  width: 60%;
+  width: 70%;
 }

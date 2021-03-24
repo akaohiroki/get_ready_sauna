@@ -6,7 +6,7 @@
       Get Ready サウナ!!
     </h1>
     <p class='service-explain'>
-      おすすめのサウナを投稿しよう!!
+      おすすめのサウナを投稿しよう!
     </p>
     <p class='service-explain'>
       整える(Get Ready)サウナを見つけ出せ！
@@ -47,7 +47,7 @@
           水風呂に浸かる
         </h3>
         <p class='feature-list-description'>
-          1~3分程度浸かり、熱せられた体を冷やします。
+          1~2分程度浸かり、熱せられた体を冷やします。
         </p>
       </li>
       <li class='list'>
@@ -63,8 +63,7 @@
   </div>
 
   <div class='item-contents'>
-    <h2 class='title'>ピックアップサウナ</h2>
-    <%= link_to '新規投稿記事', "#", class: "subtitle" %>
+    <h2 class='title'>♨️サウナ記事一覧♨️</h2>
     <ul class='item-lists'>
 
     <% @articles.each do |article| %>
@@ -81,7 +80,7 @@
           <h3 class='item-name'>
             <%= article.name %>
           </h3>
-          <div class='item-price'>
+          <div class='item-place'>
             <span><%= article.prefecture.name %><br><%= article.budget.name %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>

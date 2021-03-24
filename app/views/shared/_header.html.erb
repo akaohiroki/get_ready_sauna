@@ -1,7 +1,7 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
   <div class='search-bar-contents'>
-    <%= link_to image_tag("sauna.png", class:"furima-icon"), "/" %>
+    <%= link_to image_tag("sauna.png", class:"sauna-icon"), "/" %>
     <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |f| %>
       <%= f.text_field :keyword, placeholder: "キーワードから探す", class: "input-box" %>
       <%= f.submit "♨検索♨️", class: "search-button" %>
@@ -10,11 +10,11 @@
   <div class='nav'>
     <ul class='lists-left'>
       <li><%= link_to 'サウナとは', page_path('about'), class: "category-list" %></li>
-      <li><%= link_to 'サウナ画像', page_path('image'), class: "brand-list" %></li>
+      <li><%= link_to 'サウナ画像', page_path('image'), class: "category-list" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+        <li><%= link_to current_user.nickname, "#", class: "header-list" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
