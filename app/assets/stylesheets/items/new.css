@@ -40,6 +40,16 @@
   font-weight: bold;
 }
 
+.indispensable2 {
+  background: #1B73BA;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .weight-bold-text {
   font-weight: bold;
   min-width: 170px;
@@ -51,6 +61,23 @@
   width: 100%;
   background-color: #f5f5f5;
   padding-left: 20px;
+  color:#000000;
+  font-size: 15px;
+  line-height: 120%;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  position:relative;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  border-radius: 24px;
+  -webkit-box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  -moz-box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 
 .question {
