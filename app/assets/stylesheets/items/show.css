@@ -1,7 +1,7 @@
 /* 商品の概要 */
 
 .item-show {
-  background-color: #f8f8f8;
+  background-color: #FF9872;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
 .item-box>.name {
   text-align: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 39px;
 }
 
 .item-box-img {
@@ -41,23 +41,37 @@
 }
 
 .item-price-box>.item-price {
-  font-size: 4vh;
+  font-size: 3vh;
   font-weight: bold;
 }
 
 .item-price-box>.item-postage {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 
 .item-red-btn {
   text-align: center;
-  background-color: #ea352d;
-  font-size: 24px;
+  background-color: #FF4F02;
+  font-size: 20px;
   font-weight: bold;
   color: #FFF;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  border-radius: 24px;
+  -webkit-box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  -moz-box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.item-red-btn:hover{
+  opacity:0.7;
 }
 
 .or-text {
@@ -65,12 +79,26 @@
 }
 
 .item-destroy {
-  background-color: lightgray;
+  background-color: #A9A9A9;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  border-radius: 24px;
+  -webkit-box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  -moz-box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.item-destroy:hover{
+  opacity:0.7;
 }
 
 .item-explain-box {
@@ -82,27 +110,75 @@
 .detail-table {
   margin-bottom: 30px;
   width: 100%;
+  border-collapse:separate;
+  border-spacing: 0;
 }
 
-.detail-item {
-  width: 20%;
-  background-color: #eee;
-  border: 1px solid #dedede;
-  font-size: 14px;
+.detail-name:hover {
+  opacity:0.6;
+}
+
+.detail-table th:first-child{
+  border-radius: 5px 0 0 0;
+}
+
+.detail-table th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+}
+
+.detail-table th{
   text-align: center;
+  font-size: 20px;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  width: 40%;
+  padding: 10px 0;
 }
 
-.detail-value {
-  width: 80%;
-  padding: 20px;
-  border: 1px solid #dedede;
-  font-size: 14px;
+.detail-table td{
+  text-align: center;
+  font-size: 20px;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top: 2px solid #a8b7c5;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  width: 60%;
+  padding: 10px 0;
 }
+
+.detail-table td:last-child{
+  border-right: 1px solid #a8b7c5;
+}
+
+.detail-table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+.detail-table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
 
 .option {
   display: flex;
   justify-content: space-between;
   position: relative;
+}
+
+.item-explain-comment {
+  border-radius: 12px;
+  border: 5px ridge #FFAD90!important;
+  background-image: radial-gradient(circle 300px at 35% 35%,#ffffff,#FFDBC9)!important;
+  margin: 1em;
+  padding: 0.5em!important;
+  box-shadow: 3px 3px 3px 3px #FFAD90;
+  font-size: 20px;
+  font-weight: 555;
 }
 
 .favorite-btn {
@@ -143,15 +219,17 @@
 
 .comment-box {
   width: 40vw;
-  background-color: #fff;
+  background-color: #EEEEEE;
   margin: 5vh 0;
   text-align: center;
+  border: bold;
 }
 
 .comment-text {
   width: 100%;
   height: 100px;
   padding: 10px;
+  font-size: 17px;
   border: solid 2px #dedede;
   resize: none;
 }
@@ -175,6 +253,10 @@
   margin-bottom: 2vh;
 }
 
+.comment-btn:hover {
+  opacity:0.8;
+}
+
 .comment-flag {
   display: flex;
   justify-content: center;
@@ -182,6 +264,35 @@
 
 .comment-flag-icon {
   margin: 10px 5px 0 0;
+}
+
+.comments_list {
+  position: relative;
+  background-color: #ffc4c4;
+  padding: 10px;
+  color: #333;
+  margin: 15px;
+  font-size: 17px;
+  font-weight: 550;
+  border-radius: 10px;
+}
+
+.comments_list::before {
+  content: "";
+  position: absolute;
+  border: 12px solid transparent;
+  border-right: 12px solid #ffc4c4;
+  top: 20%;
+  left: -24px;
+}
+
+.comments_list p {
+margin: 0;
+padding: 0;
+}
+
+.comment-up:hover {
+  opacity: 0.7;
 }
 
 .links {
@@ -192,25 +303,62 @@
 }
 
 .change-item-btn {
-  font-size: 30px;
+  font-size: 33px;
   text-decoration: none;
-  color: #3CCACE;
+  color: #000000;
+  font-weight: bold;
+}
+
+.change-article-btn {
+  font-size: 27px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  width: 180px;
+  padding:15px;
+  color:#ffffff;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  text-decoration: none;
+  background: #1B73BA;
+  display: block;
+  position:relative;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  border-radius: 24px;
+  -webkit-box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  -moz-box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  box-shadow:0px 15px 30px -15px rgba(0,0,0,0.3);
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.change-article-btn:hover{
+  opacity:0.7;
 }
 
 .another-item {
   display: block;
   margin: 30px 0px 8px;
-  color: #3CCACE;
+  color: #000000;
   text-decoration: none;
   font-weight: bold;
-  font-size: 23px;
+  font-size: 30px;
+  background: linear-gradient(transparent 80%, #FFFFFF 80%);
+}
+
+.another-item:hover{
+  opacity:0.7;
 }
 
 .iine__button {
   background: linear-gradient(to right, #feb400, #FFE300);
   line-height: 42px;
   color: #6d3701;
-  font-size: 14px;
+  font-size: 16px;
   display: inline-block;
   padding: 0 18px;
   border-radius: 100px;
