@@ -29,19 +29,17 @@
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"サウナの名称（40文字まで)", maxlength:"40" %>
-      <div class="items-explain">
-        <div class="weight-bold-text">
-          所在地
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"article-prefecture"}) %>
-      </div>
     </div>
 
     <%# サウナの詳細 %>
     <div class="items-detail">
       <div class="weight-bold-text">サウナの詳細</div>
       <div class="form">
+        <div class="weight-bold-text">
+          所在地
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"article-prefecture"}) %>
         <div class="weight-bold-text">
           風呂の種類
           <span class="indispensable">必須</span>

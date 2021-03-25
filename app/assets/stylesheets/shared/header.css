@@ -19,6 +19,13 @@
 .sauna-icon {
   width: 10vw;
   margin-right: 10vw;
+  overflow: visible;
+  transition-duration: 0.5s;
+}
+
+.sauna-icon:hover {
+  transform: scale(1.1,1.1);
+  transition-duration: 0.5s;
 }
 
 .search-form {

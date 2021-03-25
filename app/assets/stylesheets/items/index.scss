@@ -204,6 +204,13 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: visible;
+  transition-duration: 0.5s;
+}
+
+.feature-lists>.list:hover {
+  transform: scale(1.2,1.2);
+  transition-duration: 0.5s;
 }
 
 .feature-list-text {
@@ -229,6 +236,13 @@ a {
   font-size: 6vh;
   line-height: 2.2;
   font-weight: bold;
+  overflow: visible;
+  transition-duration: 0.5s;
+}
+
+.item-contents>.title:hover {
+  transform: scale(1.1,1.1);
+  transition-duration: 0.5s;
 }
 
 .item-contents>.subtitle {
@@ -257,6 +271,13 @@ a {
   background: #FFF;
   border: solid 5px #6091d3;/*線*/
   border-radius: 10px;/*角の丸み*/
+  overflow: visible;
+  transition-duration: 0.5s;
+}
+
+.item-lists>.list:hover {
+  transform: scale(0.97);
+transition-duration: 0.5s;
 }
 
 .item-img-content {
@@ -266,6 +287,18 @@ a {
 .item-img {
   width: 33vh;
   height: 33vh;
+}
+
+.sample-img {
+  width: 33vh;
+  height: 33vh;
+  overflow: visible;
+  transition-duration: 0.5s;
+}
+
+.sample-img:hover {
+  transform: scale(1.1,1.1);
+  transition-duration: 0.5s;
 }
 
 .sold-out {

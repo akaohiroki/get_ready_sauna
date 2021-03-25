@@ -112,7 +112,7 @@
     <%= link_to "後ろの投稿📝 ＞", article_path(@article.id), class: "change-article-btn" %>
     </a>
   </div>
-  <%= link_to "#{@article.user.nickname}さんの投稿をもっと見る", user_path(@article.user_id), method: :get, class: "another-item" %>
+  <%= link_to "#{@article.user.nickname}さんの投稿をもっと見る", user_path(@article.user_id, anchor: 'user-articles'), class: "another-item" %>
 </div>
 
 <%= render "shared/footer" %>
