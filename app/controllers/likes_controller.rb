@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_variables, only: [:create, :destroy]
+  before_action :authenticate_user!
 
   def create
     Like.create(user_id: current_user.id, article_id: params[:id])
