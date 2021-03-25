@@ -63,6 +63,13 @@
 .logo-white {
   width: 20vh;
   vertical-align: bottom;
+  overflow: visible;
+  transition-duration: 0.5s;
+}
+
+.logo-white:hover {
+  transform: scale(1.1,1.1);
+  transition-duration: 0.5s;
 }
 
 .footer>p {

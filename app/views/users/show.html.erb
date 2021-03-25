@@ -16,7 +16,7 @@
       </span>
     </div>
 
-    <div class="item-explain-box">
+    <div class="item-explain-comment">
       <span><%= @user.self_introduction %></span>
     </div>
 
@@ -43,7 +43,7 @@
       </tbody>
     </table>
 
-    <ul class='item-lists'>
+    <ul class='item-lists', id='user-articles'>
     <% @user.articles.each do |article| %>
       <li class='list'>
         <%= link_to article_path(article.id) do %>
@@ -70,20 +70,7 @@
       </li>
     <% end %>
     </ul>
-
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な投稿の通報</span>
-      </div>
-    </div>
   </div>
-  <%# /投稿の概要 %>
-
 </div>
 
 <%= render "shared/footer" %>

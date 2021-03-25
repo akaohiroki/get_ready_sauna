@@ -1,6 +1,5 @@
 <%= render "shared/header" %>
 
-<%# 投稿の概要 %>
 <div class="item-show">
   <div class="item-box">
     <h2 class="name">
@@ -34,7 +33,7 @@
       <tbody>
         <tr>
           <th class="detail-item">投稿者</th>
-          <td class="detail-value"><%= link_to @article.user.nickname, user_path(@article.user_id) %></td>
+          <td class="detail-value"><%= link_to @article.user.nickname, user_path(@article.user_id), class: "detail-name" %></td>
         </tr>
         <tr>
           <th class="detail-item">風呂の種類</th>
@@ -67,13 +66,12 @@
       </tbody>
     </table>
 
-    <div class="item-explain-box">
-      <span><%= @article.general_comment %></span>
+    <div class="item-explain-comment">
+      <%= @article.general_comment %>
     </div>
-  </div>
-
-  <div class="like-link" id="like-link-<%= @article.id %>">
-    <%= render partial: 'likes/like', locals: { article: @article } %>
+    <div class="like-link" id="like-link-<%= @article.id %>">
+      <%= render partial: 'likes/like', locals: { article: @article } %>
+    </div>
   </div>
 
   <div class="comment-box">
@@ -100,24 +98,21 @@
       <% @comments.each do |comment| %>
         <li class="comments_list">
             <p>
-              <%= link_to "#{comment.user.nickname} :", user_path(comment.user_id), class: "comment-flag-icon" %>
-              <%= comment.text %>
-              <% if current_user == comment.user %>
-                <%= link_to "削除", article_comment_path(@article, comment), method: :delete %>
-              <% end %>
+              <%= link_to "#{comment.user.nickname} :", user_path(comment.user_id), class: "comment-up" %>
+                <%= comment.text %>
+                <% if current_user == comment.user %>
+                  <%= link_to "削除", article_comment_path(@article, comment), method: :delete, class: "comment-up" %>
+                <% end %>
             </p>
         </li>
       <% end %>
     </ul>
   <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の投稿📝
-    </a>
-    <a href="#" class="change-item-btn">
-      📝後ろの投稿 ＞
+    <%= link_to "＜ 前の投稿📝", article_path(@article.id), class: "change-article-btn" %>
+    <%= link_to "後ろの投稿📝 ＞", article_path(@article.id), class: "change-article-btn" %>
     </a>
   </div>
-  <%= link_to "#{@article.user.nickname}さんの投稿をもっと見る", user_path(@article.user_id), method: :get, class: "another-item" %>
+  <%= link_to "#{@article.user.nickname}さんの投稿をもっと見る", user_path(@article.user_id, anchor: 'user-articles'), class: "another-item" %>
 </div>
 
 <%= render "shared/footer" %>

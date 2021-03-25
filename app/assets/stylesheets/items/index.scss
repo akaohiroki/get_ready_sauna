@@ -6,10 +6,9 @@ a {
   background: #f8f8f8;
 }
 
-/* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background-image: image-url('sauna1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -29,8 +28,17 @@ a {
 }
 
 .service-explain {
-  font-size: 5vh;
+  font-size: 6vh;
   line-height: 70px;
+}
+
+.service-explain2 {
+  font-size: 3.7vh;
+  line-height: 70px;
+}
+
+.service-explain2 span {
+  border-bottom: solid 4px #00ECFF;
 }
 
 .store-btn {
@@ -47,9 +55,6 @@ a {
   height: 9vh;
 }
 
-/* //画面上部の「人生を変えるフリマアプリ」帯部分 */
-
-/* FURIMAが選ばれる3つの理由部分 */
 .select-reason-contents {
   padding: 5vh 15vw;
 }
@@ -120,10 +125,6 @@ a {
   margin-top: 20px;
 }
 
-/* //FURIMAが選ばれる3つの理由部分 */
-
-
-/* 画面中央の「会員数日本一位」帯部分*/
 .ad-contents {
   width: 100vw;
   height: 80vh;
@@ -148,7 +149,11 @@ a {
 
 .ad-explain {
   font-size: 4vh;
-  line-height: 50px;
+  line-height: 55px;
+}
+
+.ad-explain span {
+  border-bottom: solid 4px #FF4F02;
 }
 
 .store-btn {
@@ -165,16 +170,13 @@ a {
   height: 9vh;
 }
 
-/* //画面中央の「会員数日本一位」帯部分 */
-
-/* FURIMAの特徴 */
 .feature-contents {
   padding: 5vh 15vw;
 }
 
 .feature-contents>.title {
   text-align: center;
-  font-size: 3.5vh;
+  font-size: 3.8vh;
   font-weight: bold;
   margin-bottom: 5vh;
   position: relative;
@@ -182,9 +184,9 @@ a {
 
 .feature-contents>.title::after {
   content: '';
-  width: 70px;
+  width: 120px;
   height: 4px;
-  background-color: #3ccace;
+  background-color: #00ECFF;
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -202,11 +204,18 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: visible;
+  transition-duration: 0.5s;
+}
+
+.feature-lists>.list:hover {
+  transform: scale(1.2,1.2);
+  transition-duration: 0.5s;
 }
 
 .feature-list-text {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 50px;
 }
 
@@ -215,12 +224,8 @@ a {
   margin-top: 20px;
 }
 
-/* //FURIMAの特徴 */
-
-/* 商品一覧 */
-
 .item-contents {
-  background-color: #FFF;
+  background-color: #FF9872;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -228,9 +233,16 @@ a {
 }
 
 .item-contents>.title {
-  font-size: 5vh;
-  line-height: 1.4;
+  font-size: 6vh;
+  line-height: 2.2;
   font-weight: bold;
+  overflow: visible;
+  transition-duration: 0.5s;
+}
+
+.item-contents>.title:hover {
+  transform: scale(1.1,1.1);
+  transition-duration: 0.5s;
 }
 
 .item-contents>.subtitle {
@@ -252,8 +264,21 @@ a {
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #6091d3;/*文字色*/
+  background: #FFF;
+  border: solid 5px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  overflow: visible;
+  transition-duration: 0.5s;
 }
 
+.item-lists>.list:hover {
+  transform: scale(0.97);
+transition-duration: 0.5s;
+}
 
 .item-img-content {
   position: relative;
@@ -262,6 +287,18 @@ a {
 .item-img {
   width: 33vh;
   height: 33vh;
+}
+
+.sample-img {
+  width: 33vh;
+  height: 33vh;
+  overflow: visible;
+  transition-duration: 0.5s;
+}
+
+.sample-img:hover {
+  transform: scale(1.1,1.1);
+  transition-duration: 0.5s;
 }
 
 .sold-out {
@@ -290,10 +327,11 @@ a {
   font-size: 2.5vh;
 }
 
-.item-price {
-  font-size: 1.5vh;
+.item-place {
+  font-size: 1.7vh;
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 
