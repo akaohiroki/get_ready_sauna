@@ -60,7 +60,9 @@
 
 ## DEMO  
 ### ・トップページ(投稿記事一覧画面)  
-![6a39f32e731c310733ca4af6c1bba825](https://user-images.githubusercontent.com/78332914/112424079-20738b80-8d77-11eb-8b2e-2107feaa75af.gif)
+![6a39f32e731c310733ca4af6c1bba825](https://user-images.githubusercontent.com/78332914/112424079-20738b80-8d77-11eb-8b2e-2107feaa75af.gif)  
+### ・新規登録画面
+![1a91ea2cf3f90452ce54f9930dcd0cf1](https://user-images.githubusercontent.com/78332914/112426908-1bfda180-8d7c-11eb-9d98-48f5933270fc.gif)
 
 <br>
 <br>
