@@ -59,31 +59,7 @@
 <br>
 
 ## DEMO  
-### ・トップページ(投稿記事一覧画面)  
-![6a39f32e731c310733ca4af6c1bba825](https://user-images.githubusercontent.com/78332914/112424079-20738b80-8d77-11eb-8b2e-2107feaa75af.gif)  
-<br>
-### ・新規登録画面
-![1a91ea2cf3f90452ce54f9930dcd0cf1](https://user-images.githubusercontent.com/78332914/112426908-1bfda180-8d7c-11eb-9d98-48f5933270fc.gif)  
-<br>
-### ・記事投稿画面
-![02425b4367c4d831aa9647fe74fb63ed](https://user-images.githubusercontent.com/78332914/112427117-6a12a500-8d7c-11eb-9ab0-25ed9139727d.gif)  
-<br>
-### ・投稿記事詳細画面
-![17fe9daa44344bc4b33ed37bbaa196ba](https://user-images.githubusercontent.com/78332914/112427620-3dab5880-8d7d-11eb-9a65-175007eef128.gif)  
-<br>
-### ・ユーザー詳細画面
-![7fa12bea25047a3715f65d775142e7a0](https://user-images.githubusercontent.com/78332914/112427769-7b0fe600-8d7d-11eb-891b-882c038677a9.gif)  
-<br>
-### ・ユーザー情報編集画面
-![f777d8503ea1c68867483b44bce4504f](https://user-images.githubusercontent.com/78332914/112427915-be6a5480-8d7d-11eb-8981-069ba98bbdcb.gif)  
-<br>
-### ・投稿記事編集、削除画面
-![d0aaeafbbab7c4d9e384c54ddc6d4a85](https://user-images.githubusercontent.com/78332914/112428389-6f70ef00-8d7e-11eb-9efb-e5097071c20b.gif)  
-<br>
-### ・静的ページ画面
-![55e8a26be7d2ce8dc85cac3576bb94d3](https://user-images.githubusercontent.com/78332914/112428449-8a436380-8d7e-11eb-80fa-45a73b6cdf5b.gif)  
-<br>
-<br>
+
 
 ## 実装予定の機能
 ・ユーザーフォロー機能  
