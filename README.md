@@ -58,9 +58,12 @@
 <br>
 <br>
 
-## DEMO
+## DEMO  
+### ・トップページ(投稿記事一覧画面)  
+![6a39f32e731c310733ca4af6c1bba825](https://user-images.githubusercontent.com/78332914/112424079-20738b80-8d77-11eb-8b2e-2107feaa75af.gif)
 
-
+<br>
+<br>
 
 ## 実装予定の機能
 ・ユーザーフォロー機能  
