@@ -215,7 +215,6 @@
 }
 
 
-/* /商品の概要 */
 
 .comment-box {
   width: 40vw;
@@ -363,4 +362,19 @@ padding: 0;
   padding: 0 18px;
   border-radius: 100px;
   font-weight: bold;
+}
+
+@media (max-width: 599px) {
+  .detail-table {
+    width: 58%;
+  }
+  .item-explain-comment {
+    width: 58%;
+  }
+  .comment-box {
+    width: 90vw;
+  }
+  .change-article-btn {
+    margin-left: 2vw;
+  }
 }
