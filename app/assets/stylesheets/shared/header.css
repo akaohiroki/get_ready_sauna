@@ -62,6 +62,7 @@
 
 .search-button {
   width: 10vh;
+  height: 5vh;
   border: 0;
   cursor: pointer;
   background-color: #00ECFF;
@@ -152,7 +153,6 @@
 .header-list {
   text-decoration: none;
   margin-right: 3vw;
-  color: #333333;
   font-weight: bold;
   width: 180px;
   padding:15px;
@@ -183,7 +183,6 @@
 
 .logout {
   text-decoration: none;
-  color: #333333;
   font-weight: bold;
   width: 180px;
   padding:15px;
@@ -269,4 +268,22 @@
 
 .sign-up:hover{
   opacity:0.7;
+}
+
+@media (max-width: 599px) {
+  .sauna-icon {
+    width: 18vw;
+  }
+  .search-button {
+    width: 7vh;
+    font-size: 9px;
+  }
+  .header-list {
+    margin-bottom: 1vh;
+    margin-top: 2vh;
+  }
+  .logout {
+    margin-bottom: 1vh;
+    margin-top: 2vh;
+  }
 }
