@@ -32,6 +32,10 @@ a {
   line-height: 70px;
 }
 
+.about-title {
+  font-size: 14vh;
+}
+
 .service-explain2 {
   font-size: 3.7vh;
   line-height: 70px;
@@ -152,7 +156,17 @@ a {
   line-height: 55px;
 }
 
-.ad-explain span {
+.ad-title2 {
+  font-size: 12vh;
+  margin-bottom: 2vh;
+}
+
+.ad-explain2 {
+  font-size: 4vh;
+  line-height: 55px;
+}
+
+.ad-explain2 span {
   border-bottom: solid 4px #FF4F02;
 }
 
@@ -360,5 +374,24 @@ transition-duration: 0.5s;
   }
   .feature-contents {
     padding: 5vh 30vw;
+  }
+  .about-title {
+    font-size: 8vh;
+  }
+  .service-explain2 {
+    font-size: 3vh;
+    line-height: 50px;
+  }
+  .ad-title2 {
+    font-size: 7vh;
+    margin-bottom: 2vh;
+  }
+  .ad-explain2 {
+    font-size: 3vh;
+    line-height: 55px;
+  }
+  .sample-img {
+    width: 42vh;
+    height: 40vh;
   }
 }
