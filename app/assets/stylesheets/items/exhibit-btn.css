@@ -28,3 +28,14 @@
 .purchase-btn-icon {
   width: 70%;
 }
+
+@media (max-width: 599px) {
+  .purchase-btn {
+    width: 110px;
+    height: 90px;
+    padding: 7px;
+  }
+  .purchase-btn-text {
+    font-size: 15px;
+  }
+}

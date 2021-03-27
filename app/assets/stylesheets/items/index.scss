@@ -350,4 +350,15 @@ transition-duration: 0.5s;
   font-size: 2vh;
 }
 
-/* //商品一覧 */
+@media (max-width: 599px) {
+  .service-title {
+    font-size: 11vh;
+  }
+  .service-explain {
+    font-size: 5vh;
+    line-height: 65px;
+  }
+  .feature-contents {
+    padding: 5vh 30vw;
+  }
+}
