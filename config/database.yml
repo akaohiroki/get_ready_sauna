@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: get_ready_sauna_production
-  username: get_ready_sauna
-  password: <%= ENV['GET_READY_SAUNA_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
